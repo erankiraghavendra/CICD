@@ -4,7 +4,7 @@ pipeline {
         stage('Build') {
             steps {
                 script {
-                app = docker.build("bm3fq4mlfz5d/anil.bhagavatula@poonawallafincorp.com/nginxcustomimage")
+                app = docker.build("nginxcustomimage")
             }
         }
         }
