@@ -20,8 +20,7 @@ pipeline {
             steps {
                 script {
             docker.withRegistry('https://bom.ocir.io/', 'oci-docker') {
-            app.push("${env.BUILD_NUMBER}")
-            app.push("latest")
+            docker push bom.ocir.io/bm3fq4mlfz5d/customnginx:latest
                }
             }
         }
