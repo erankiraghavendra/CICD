@@ -4,7 +4,7 @@ pipeline {
         stage('Build') {
             steps {
                 script {
-                app = docker.build("tunnudocker/nginxcustomimage")
+                app = docker.build("bm3fq4mlfz5d/anil.bhagavatula@poonawallafincorp.com/nginxcustomimage")
             }
         }
         }
@@ -19,7 +19,7 @@ pipeline {
         stage('Push image') {
             steps {
                 script {
-            docker.withRegistry('https://registry.hub.docker.com', 'docker-hub-credentials') {
+            docker.withRegistry('https://bom.ocir.io/', 'oci-docker') {
             app.push("${env.BUILD_NUMBER}")
             app.push("latest")
                }
