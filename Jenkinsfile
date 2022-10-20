@@ -20,7 +20,7 @@ pipeline {
             steps {
                 script {
             docker.withRegistry('https://bom.ocir.io/', 'oci-docker') {
-            docker push bom.ocir.io/bm3fq4mlfz5d/customnginx:latest
+            sh 'sudo docker push bom.ocir.io/bm3fq4mlfz5d/customnginx:latest'
                }
             }
         }
