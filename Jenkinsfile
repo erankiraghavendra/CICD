@@ -24,7 +24,7 @@ pipeline {
             }
                
                 sh "sudo docker tag nginxcustomimage phx.ocir.io/axbivmqor9at/nginxcustomimage:latest:${env.BUILD_ID}"
-                sh "sudo docker push phx.ocir.io/axbivmqor9at/nginxcustomimage:latest:${env.BUILD_ID}"
+                sh "sudo docker push phx.ocir.io/axbivmqor9at/nginxcustomimage:latest"
             }
         }
         }
