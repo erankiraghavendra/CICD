@@ -4,7 +4,7 @@ pipeline {
         stage('Build') {
             steps {
                 script {
-                app = docker.build("nginxcustomimage")
+                app = docker.build("nginxcustomimage:${env.BUILD_ID}")
             }
         }
         }
@@ -23,7 +23,7 @@ pipeline {
               sh('sudo docker login -u axbivmqor9at/oracleidentitycloudservice/raghavendra.eranki@infolob.com -p ${dockerhub} phx.ocir.io')
             }
                
-                sh "sudo docker tag nginxcustomimage phx.ocir.io/axbivmqor9at/nginxcustomimage:${VERSION}"
+                sh "sudo docker tag nginxcustomimage phx.ocir.io/axbivmqor9at/nginxcustomimage"
                 sh "sudo docker push phx.ocir.io/axbivmqor9at/nginxcustomimage:latest"
             }
         }
