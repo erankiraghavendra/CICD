@@ -25,14 +25,12 @@ pipeline {
         }
 		
        stage('Deployment-remote-server') {
-	  
-	       steps {
-		 def dockerRun = 'docker run -d -p 80:80 phx.ocir.io/axbivmqor9at/nginxcustomimage:latest'
-                 sshagent(['remote-server']) {
-	         sh 'ssh -o StrictHostKeyChecking=no opc@10.0.0.184 ${dockerRun}'
+         def dockerRun = 'docker run -d -p 80:80 phx.ocir.io/axbivmqor9at/nginxcustomimage:latest'
+         sshagent(['remote-server']) {
+	   sh 'ssh -o StrictHostKeyChecking=no opc@10.0.0.184 ${dockerRun}'
             }
             }
-            }
+            
         }
    }
  
