@@ -1,15 +1,16 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html>
 <head>
-  <meta charset="utf-8">
-  <title>Docker Nginx static webpage for PFL and kubernetes deployment</title>
-  <h3>Hellow for audit team</h3>
-  <h1>Hello!</h1>
-  <h2>welcome!</h2>
-  <h4>Welcomme!</h4>
+        <title> Week16 LUIT Project </title>
 </head>
 <body>
-  <h2>Hello from Nginx container</h2>
-  <h1>Hello!</h1>
+        <body style=text-align:center;background-color:red;font-weight:900;font-size:20px;font-family:Helvetica,Arial,sans-serif>
+        <img src="https://www.docker.com/wp-content/uploads/2022/03/Moby-logo.png">
+        <h1> Welcome to my custom nginx webpage hosted in a Docker container </h1>
+        <p> This container was deployed: <div id="date"></div></p>
+<script>
+        var date = new Date();
+        document.getElementById("date").innerHTML=date.toLocaleString();
+</script>
 </body>
 </html>
