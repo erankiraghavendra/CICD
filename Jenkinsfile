@@ -4,7 +4,7 @@ pipeline {
         stage('Build') {
             steps {
                 script {
-                app = docker.build("nginxcustomimage:${env.BUILD_ID}")
+                app = docker.build("nginxcustomimage")
             }
         }
         }
