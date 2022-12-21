@@ -30,7 +30,6 @@ pipeline {
             steps {
                  sshagent(['remote-server']) {
 		 sh 'ssh -o StrictHostKeyChecking=no opc@10.0.0.184 '
-	         sh "sudo docker rm -f $(docker ps -a -q)"
 	         sh "sudo docker run -it --name audit -d -p 80:80 phx.ocir.io/axbivmqor9at/nginxcustomimage:latest"
             }
             }
